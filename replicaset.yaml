@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: goserver2 
+  labels:
+    app: goserver2
+spec:
+  selector:
+    matchLabels:
+      app: goserver2
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "goserver2"
+    spec:
+      containers:
+        - name: php-redis
+          image: gcr.io/google_samples/gb-frontend:v3

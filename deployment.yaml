@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goserver3 
+  labels:
+    app: goserver3
+spec:
+  selector:
+    matchLabels:
+      app: goserver3
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "goserver3"
+    spec:
+      containers:
+        - name: goserver3
+          image: "vieira900/vieira900:latest"
