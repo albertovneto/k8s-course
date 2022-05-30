@@ -17,8 +17,17 @@ spec:
       containers:
         - name: goserver5
           image: "vieira900/vieira900:v4"
-          env:
-            - name: NAME
-              value: "Alberto"
-            - name: AGE
-              value: "29"
+          envFrom:
+            - configMapRef:
+                name: goserver-env
+#          env:
+#            - name: NAME
+#              valueFrom:
+#                configMapKeyRef:
+#                  name: goserver-env
+#                  key: NAME
+#            - name: AGE
+#              valueFrom:
+#                configMapKeyRef:
+#                  name: goserver-env
+#                  key: Age
